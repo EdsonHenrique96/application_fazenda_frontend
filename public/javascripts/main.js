@@ -59,7 +59,7 @@ function Candidate() {
   sortedCandidates
     .map((candidate, indice) => {
       const listItem = document.createElement('li');
-      listItem.setAttribute('class', 'list-item');
+      listItem.classList.add('list-item', 'list-item-primary');
 
       const wrapperItem = document.createElement('div');
       wrapperItem.setAttribute('class', 'wrapper-item');
@@ -100,7 +100,8 @@ function Candidate() {
 
       // set background color for even elements
       if((indice + 1)%2 === 0){
-        listItem.style.backgroundColor = '#f1f2f6'
+        listItem.classList.remove('list-item-primary');
+        listItem.classList.add('list-item-secoundary');
       }
 
       rankList.appendChild(listItem);
