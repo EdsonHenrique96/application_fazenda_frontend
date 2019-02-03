@@ -58,6 +58,38 @@ function Candidate() {
 
   sortedCandidates
     .map((candidate, indice) => {
+
+      //session percentage of likes
+      const containerPercentage = document.createElement('div');
+      containerPercentage.setAttribute('class', 'container-percentage');
+      const boxLike = document.createElement('div');
+      boxLike.setAttribute('class', 'box-like');
+      const textLike = document.createElement('p');
+      const titlePercetageLike = document.createElement('div');
+      const textTitleLike = document.createElement('p');
+      titlePercetageLike.setAttribute('class','title-box-percentage');
+      textTitleLike.innerHTML = 'GOSTAM'
+      titlePercetageLike.appendChild(textTitleLike);
+
+      textLike.innerHTML = `${candidate.likePercentage}%`;
+      const boxDoNotLike = document.createElement('div');
+      boxDoNotLike.setAttribute('class', 'box-do-not-like');
+      const textDoNotLike = document.createElement('p');
+      textDoNotLike.innerHTML = `${candidate.doNotLikePercentage}%`;
+      const titlePercetageNotLike = document.createElement('div');
+      titlePercetageNotLike.setAttribute('class','title-box-percentage');
+      const textTitleNotLike = document.createElement('p');
+      textTitleNotLike.innerHTML = 'NÃO GOSTAM'
+      titlePercetageNotLike.appendChild(textTitleNotLike);
+
+
+      boxLike.appendChild(titlePercetageLike);
+      boxLike.appendChild(textLike);
+      boxDoNotLike.appendChild(titlePercetageNotLike);
+      boxDoNotLike.appendChild(textDoNotLike);
+      containerPercentage.appendChild(boxLike);
+      containerPercentage.appendChild(boxDoNotLike);
+
       const listItem = document.createElement('li');
       listItem.classList.add('list-item', 'list-item-primary');
 
@@ -95,6 +127,7 @@ function Candidate() {
       containerText.appendChild(name);
       containerText.appendChild(description);
       wrapperItem.appendChild(containerText);
+      wrapperItem.appendChild(containerPercentage);
 
       listItem.appendChild(wrapperItem);
 
