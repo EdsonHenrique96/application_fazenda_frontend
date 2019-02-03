@@ -54,7 +54,6 @@ function Candidate() {
   const candidatesWithPercentage = await candidete.calcPercentage(candidates);
   const sortedCandidates = await candidete.sortByApproval(candidatesWithPercentage);
 
-  const container = document.getElementById('container');
   const rankList = document.getElementById('rank-list');
 
   sortedCandidates
@@ -99,11 +98,12 @@ function Candidate() {
 
       listItem.appendChild(wrapperItem);
 
-      rankList.appendChild(listItem);
-
+      // set background color for even elements
       if((indice + 1)%2 === 0){
-        // background color gray
+        listItem.style.backgroundColor = '#f1f2f6'
       }
+
+      rankList.appendChild(listItem);
     });
 
 })();
