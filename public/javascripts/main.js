@@ -39,7 +39,6 @@ async function sortByApproval() {
       if(candidates[left].likePercentage < candidates[right].likePercentage){
         [candidates[left], candidates[right]] = [candidates[right], candidates[left]];
       }
-      count++;
     }
   }
 
