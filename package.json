@@ -3,11 +3,10 @@
   "version": "0.0.1",
   "scripts": {
     "start": "node app.js",
-    "build": "gulp",
+    "build": "./node_modules/.bin/gulp",
     "compile:sass": "./node_modules/.bin/node-sass -o -w public/sass/style.scss public/stylesheets/style.css"
   },
   "dependencies": {
-    "@babel/runtime": "^7.3.1",
     "connect": "^3.6.6",
     "cors": "^2.8.5",
     "node-sass": "^4.11.0",
@@ -15,12 +14,16 @@
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
-    "@babel/plugin-transform-runtime": "^7.2.0",
-    "@babel/preset-env": "^7.3.1",
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.3",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-sass": "^4.0.2",
-    "gulp-uglify": "^3.0.1"
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
+    "watchify": "^3.11.0"
   }
 }
