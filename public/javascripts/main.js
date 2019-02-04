@@ -46,10 +46,10 @@ function Candidate() {
 
 }
 
+// JS DOM MANIPULATION
 
 function createPercentageElement(candidate) {
 
-  // Elements factory
   const containerPercentage = document.createElement('div');
   containerPercentage.setAttribute('class', 'container-percentage');
 
@@ -77,8 +77,6 @@ function createPercentageElement(candidate) {
   const textTitleNotLike = document.createElement('p');
   textTitleNotLike.innerHTML = 'NÃO GOSTAM'
 
-
-  // append elements
   titlePercetageLike.appendChild(textTitleLike);
   titlePercetageNotLike.appendChild(textTitleNotLike);
 
@@ -95,6 +93,97 @@ function createPercentageElement(candidate) {
   return containerPercentage;
 }
 
+function createListItem() {
+  const listItem = document.createElement('li');
+  listItem.classList.add('list-item', 'list-item-primary');
+
+  return listItem;
+}
+
+function createWrapperItem() {
+  const wrapperItem = document.createElement('div');
+  wrapperItem.setAttribute('class', 'wrapper-item');
+
+  return wrapperItem;
+}
+
+function createNameNode(candidate) {
+  const name = document.createElement('h2');
+  name.innerHTML = candidate.name;
+  return name;
+}
+
+function createDescriptionNode(candidate) {
+  const description = document.createElement('p');
+  description.innerHTML = candidate.description;
+  return description;
+}
+
+function createImgNode(candidate) {
+  const image = document.createElement('img');
+  image.setAttribute('src', candidate.picture);
+  image.setAttribute('class', 'img-profile');
+  image.setAttribute('alt', `Foto de ${candidate.name}`)
+
+  return image;
+}
+
+function createPositionNode(indice) {
+  const position = document.createElement('div');
+  const positionNumber = document.createElement('p');
+  positionNumber.innerHTML = indice+1;
+  position.appendChild(positionNumber);
+  position.setAttribute('class', 'box-position');
+
+  return position;
+}
+
+function createContainerImg() {
+  const containerImg = document.createElement('div');
+  containerImg.setAttribute('class', 'container-img');
+
+  return containerImg;
+}
+
+function createContainerText() {
+  const containerText = document.createElement('div');
+  containerText.setAttribute('class', 'container-text');
+
+  return containerText;
+}
+
+function render(indice, {
+  percentageElement,
+  listItem,
+  wrapperItem,
+  name,
+  description,
+  image,
+  position,
+  containerImg,
+  containerText,
+  rankList,
+}) {
+  containerImg.appendChild(image);
+  containerImg.appendChild(position);
+  wrapperItem.appendChild(containerImg);
+
+  containerText.appendChild(name);
+  containerText.appendChild(description);
+  wrapperItem.appendChild(containerText);
+  wrapperItem.appendChild(percentageElement);
+
+  listItem.appendChild(wrapperItem);
+
+  // set background color for even elements
+  if((indice + 1)%2 === 0){
+    listItem.classList.remove('list-item-primary');
+    listItem.classList.add('list-item-secoundary');
+  }
+
+  rankList.appendChild(listItem);
+}
+
 //  JS DOM MANIPULATION
 (async function renderCandidates() {
   const candidete = new Candidate();
@@ -108,55 +197,31 @@ function createPercentageElement(candidate) {
     .map((candidate, indice) => {
       const percentageElement = createPercentageElement(candidate);
 
-      const listItem = document.createElement('li');
-      listItem.classList.add('list-item', 'list-item-primary');
+      const listItem = createListItem();
+      const wrapperItem = createWrapperItem();
 
-      const wrapperItem = document.createElement('div');
-      wrapperItem.setAttribute('class', 'wrapper-item');
+      const name = createNameNode(candidate);
+      const description = createDescriptionNode(candidate);
 
-      const name = document.createElement('h2');
-      name.innerHTML = candidate.name;
+      const image = createImgNode(candidate);
 
-      const description = document.createElement('p');
-      description.innerHTML = candidate.description;
+      const position = createPositionNode(indice);
 
-      const image = document.createElement('img');
-      image.setAttribute('src', candidate.picture);
-      image.setAttribute('class', 'img-profile');
-      image.setAttribute('alt', `Foto de ${candidate.name}`)
+      const containerImg = createContainerImg();
+      const containerText = createContainerText();
 
-      const position = document.createElement('div');
-      const positionText = document.createElement('p');
-      positionText.innerHTML = indice+1;
-      position.appendChild(positionText);
-      position.setAttribute('class', 'box-position');
-
-      const containerImg = document.createElement('div');
-      containerImg.setAttribute('class', 'container-img');
-
-
-      const containerText = document.createElement('div');
-      containerText.setAttribute('class', 'container-text');
-
-      containerImg.appendChild(image);
-      containerImg.appendChild(position);
-      wrapperItem.appendChild(containerImg);
-
-      containerText.appendChild(name);
-      containerText.appendChild(description);
-      wrapperItem.appendChild(containerText);
-      wrapperItem.appendChild(percentageElement);
-
-      listItem.appendChild(wrapperItem);
-
-      // set background color for even elements
-      if((indice + 1)%2 === 0){
-        listItem.classList.remove('list-item-primary');
-        listItem.classList.add('list-item-secoundary');
-      }
-
-      rankList.appendChild(listItem);
+      render(indice, {
+        percentageElement,
+        listItem,
+        wrapperItem,
+        name,
+        description,
+        image,
+        position,
+        containerImg,
+        containerText,
+        rankList,
+      })
     });
-
 })();
 
