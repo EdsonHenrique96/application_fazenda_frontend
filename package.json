@@ -4,7 +4,7 @@
   "scripts": {
     "start": "node app.js",
     "build": "gulp",
-    "compile:sass": "./node_modules/.bin/node-sass -o -w public/sass/index.scss public/stylesheets/style.css"
+    "compile:sass": "./node_modules/.bin/node-sass -o -w public/sass/style.scss public/stylesheets/style.css"
   },
   "dependencies": {
     "@babel/runtime": "^7.3.1",

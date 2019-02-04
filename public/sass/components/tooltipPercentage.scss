@@ -9,6 +9,10 @@
   border: solid 1px $aux-color;
   background-color: $primary-color;
   border-radius: 4px;
+  @media screen and (max-width: 550px){
+    width: 140px;
+    right: -150px;
+  }
 }
 
 .box-do-not-like > p, .box-like > p {
