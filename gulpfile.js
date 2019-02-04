@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const {parallel} = require('gulp');
+const {parallel, series} = require('gulp');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const autoprefixer = require('gulp-autoprefixer');
@@ -16,7 +16,13 @@ function buildJs() {
 
 sass.compiler = require('node-sass');
 
-function buildCss() {
+function compileSass() {
+  return gulp.src('public/sass/style.scss')
+    .pipe(sass().on('Error', sass.logError))
+    .pipe(gulp.dest('public/stylesheets'))
+}
+
+function autoprefixerCss() {
   return gulp.src('public/stylesheets/style.css')
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
@@ -25,4 +31,4 @@ function buildCss() {
     .pipe(gulp.dest('public/dist/stylesheets'))
 };
 
-exports.default = parallel(buildJs, buildCss);
+exports.default = parallel(buildJs, series(compileSass, autoprefixerCss));
