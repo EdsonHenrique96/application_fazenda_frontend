@@ -46,6 +46,7 @@ function Candidate() {
 
 }
 
+
 // JS DOM MANIPULATION
 
 function createPercentageElement(candidate) {
