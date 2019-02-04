@@ -1,0 +1,17 @@
+.container-img {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  width: 82px;
+  padding: 0;
+  margin: 12px;
+  box-sizing: content-box;
+}
+
+.img-profile {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: 5px solid $secundary-color;
+}

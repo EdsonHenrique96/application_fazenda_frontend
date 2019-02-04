@@ -49,10 +49,10 @@ function Candidate() {
 
 // JS DOM MANIPULATION
 
-function createPercentageElement(candidate) {
+function createtooltipPercentage(candidate) {
 
-  const containerPercentage = document.createElement('div');
-  containerPercentage.setAttribute('class', 'container-percentage');
+  const tooltipPercentage = document.createElement('div');
+  tooltipPercentage.setAttribute('class', 'tooltip-percentage');
 
   const boxLike = document.createElement('div');
   boxLike.setAttribute('class', 'box-like');
@@ -88,10 +88,10 @@ function createPercentageElement(candidate) {
   boxDoNotLike.appendChild(titlePercetageNotLike);
   boxDoNotLike.appendChild(textDoNotLike);
 
-  containerPercentage.appendChild(boxLike);
-  containerPercentage.appendChild(boxDoNotLike);
+  tooltipPercentage.appendChild(boxLike);
+  tooltipPercentage.appendChild(boxDoNotLike);
 
-  return containerPercentage;
+  return tooltipPercentage;
 }
 
 function createListItem() {
@@ -154,7 +154,7 @@ function createContainerText() {
 }
 
 function render(indice, {
-  percentageElement,
+  tooltipPercentage,
   listItem,
   wrapperItem,
   name,
@@ -172,7 +172,7 @@ function render(indice, {
   containerText.appendChild(name);
   containerText.appendChild(description);
   wrapperItem.appendChild(containerText);
-  wrapperItem.appendChild(percentageElement);
+  wrapperItem.appendChild(tooltipPercentage);
 
   listItem.appendChild(wrapperItem);
 
@@ -196,7 +196,7 @@ function render(indice, {
 
   sortedCandidates
     .map((candidate, indice) => {
-      const percentageElement = createPercentageElement(candidate);
+      const tooltipPercentage = createtooltipPercentage(candidate);
 
       const listItem = createListItem();
       const wrapperItem = createWrapperItem();
@@ -212,7 +212,7 @@ function render(indice, {
       const containerText = createContainerText();
 
       render(indice, {
-        percentageElement,
+        tooltipPercentage,
         listItem,
         wrapperItem,
         name,

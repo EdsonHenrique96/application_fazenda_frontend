@@ -1,0 +1,17 @@
+.box-position {
+  position: absolute;
+  top: 53px;
+  left: 51px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid $aux-color-2;
+  background-color: $primary-color;
+  p {
+    color: $aux-color-2;
+    text-align: center;
+    margin: auto;
+    font-weight: bolder;
+    font-size: 1.3em;
+  }
+}

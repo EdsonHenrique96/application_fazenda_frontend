@@ -1,0 +1,45 @@
+.tooltip-percentage {
+  position: absolute;
+  top: 22px;
+  right: -170px;
+  display: none;
+  flex-direction: row;
+  height: 60px;
+  width: 150px;
+  border: solid 1px $aux-color;
+  background-color: $primary-color;
+  border-radius: 4px;
+}
+
+.box-do-not-like > p, .box-like > p {
+  font-size: 1.6em;
+  color: $aux-color-2;
+  font-weight: 700;
+  margin: 0;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.box-do-not-like {
+  width: 60%;
+  box-shadow: -1px 0px 2px 0px rgba(116,125,140,1);
+}
+
+.box-like {
+  width: 40%;
+}
+
+.title-box-percentage {
+  background: $secundary-color;
+  margin: 0;
+  padding: 0;
+  height: 30%;
+  & > p {
+    font-size: 0.8em;
+    margin: 0;
+    font-weight: bolder;
+    color: $aux-color-3;
+    text-align: center;
+    padding: 2px;
+  }
+}

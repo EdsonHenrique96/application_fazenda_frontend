@@ -1,0 +1,46 @@
+header {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  background-color: $primary-color;
+  width: 90% ;
+  height: 50px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  margin-left: 10%;
+  h1 {
+    margin: 0;
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 2.5em;
+    color: $aux-color;
+  }
+  @media screen and (max-width: 420px){
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+
+    h1 {
+      right: 50%;
+      transform: translate(50%, -50%);
+    }
+  }
+}
+
+#logo {
+  position: absolute;
+  z-index: 99;
+  bottom: -10px;
+  left: -65px;
+
+  @media screen and (max-width: 420px){
+      top: -161px;
+      left: 50%;
+      transform: translate(-50%, 0);
+  }
+}
+
+
