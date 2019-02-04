@@ -1,10 +1,10 @@
-@import 'variables';
+@import 'helpers/variables';
 
-@import 'body';
-@import 'header';
-@import 'section';
-@import 'rankList';
-@import 'containerImg';
-@import 'containerText';
-@import 'boxPosition';
-@import 'tooltipPercentage';
+@import 'components/body';
+@import 'components/header';
+@import 'components/section';
+@import 'components/rankList';
+@import 'components/containerImg';
+@import 'components/containerText';
+@import 'components/boxPosition';
+@import 'components/tooltipPercentage';
