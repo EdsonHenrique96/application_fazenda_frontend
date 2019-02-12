@@ -8,11 +8,11 @@ sass.compiler = require('node-sass');
 function compileSass() {
   return gulp.src('src/assets/sass/style.scss')
     .pipe(sass().on('Error', sass.logError))
-    .pipe(gulp.dest('public/stylesheets'))
+    .pipe(gulp.dest('src/assets/stylesheets'))
 }
 
 function autoprefixerCss() {
-  return gulp.src('src/stylesheets/style.css')
+  return gulp.src('src/assets/stylesheets/style.css')
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
