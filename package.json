@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "start": "node app.js",
-    "build": "./node_modules/.bin/gulp",
+    "build": "./node_modules/.bin/gulp && ./node_modules/.bin/webpack",
     "compile:sass": "./node_modules/.bin/node-sass -o -w public/sass/style.scss public/stylesheets/style.css"
   },
   "dependencies": {
@@ -13,17 +13,12 @@
     "serve-static": "^1.13.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.2.2",
-    "babelify": "^10.0.0",
-    "browserify": "^16.2.3",
+    "css-loader": "^2.1.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
-    "gulp-babel": "^8.0.0",
     "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-uglify": "^3.0.1",
-    "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0",
-    "watchify": "^3.11.0"
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
   }
 }
