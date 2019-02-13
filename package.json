@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "start": "node app.js",
-    "build": "./node_modules/.bin/gulp && ./node_modules/.bin/webpack",
+    "build": "./node_modules/.bin/webpack",
     "compile:sass": "./node_modules/.bin/node-sass -o -w public/sass/style.scss public/stylesheets/style.css"
   },
   "dependencies": {
@@ -12,14 +12,15 @@
     "serve-static": "^1.13.2"
   },
   "devDependencies": {
+    "autoprefixer": "^9.4.7",
     "css-loader": "^2.1.0",
-    "gulp": "^4.0.0",
-    "gulp-autoprefixer": "^6.0.0",
-    "gulp-sass": "^4.0.2",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "postcss-cli": "^6.1.1",
+    "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.29.3",
-    "node-sass": "^4.11.0",
     "webpack-cli": "^3.2.3"
   }
 }
