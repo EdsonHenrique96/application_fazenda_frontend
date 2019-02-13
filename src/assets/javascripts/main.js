@@ -140,10 +140,13 @@ function render(indice, {
 
 //  JS DOM MANIPULATION
 (async function renderCandidates() {
-  const candidete = new Candidate();
-  const candidates = await candidete.getCandidates();
-  const candidatesWithPercentage = await candidete.calcPercentage(candidates);
-  const sortedCandidates = await candidete.sortByApproval(candidatesWithPercentage);
+  const candidate = new Candidate();
+  console.log('instancia', candidate);
+  const candidates = await candidate.getCandidates();
+  console.log('candidates', candidates)
+  const candidatesWithPercentage = await candidate.calcPercentage(candidates);
+  console.log('candidatesWithPercentage', candidatesWithPercentage);
+  const sortedCandidates = await candidate.sortByApproval(candidatesWithPercentage);
 
   const rankList = document.getElementById('rank-list');
 

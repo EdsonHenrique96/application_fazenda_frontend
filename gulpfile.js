@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var {parallel} = require('gulp');
+var {series} = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
 var sass = require('gulp-sass');
 
@@ -20,4 +20,4 @@ function autoprefixerCss() {
     .pipe(gulp.dest('public/dist/stylesheets'))
 };
 
-exports.default = parallel(compileSass, autoprefixerCss);
+exports.default = series(compileSass, autoprefixerCss);

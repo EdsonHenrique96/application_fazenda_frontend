@@ -32,7 +32,7 @@ function Candidate() {
   }
 
   Candidate.prototype.sortByApproval = async function sortByApproval(candidates) {
-    for(final = (candidates.length-1); final > 0 ; final--) {
+    for(let final = (candidates.length-1); final > 0 ; final--) {
       for(let begin = 0, end = final; begin < end; begin++) {
         let left = begin;
         let right = begin+1;
@@ -45,3 +45,5 @@ function Candidate() {
   }
 
 }
+
+export default Candidate;
