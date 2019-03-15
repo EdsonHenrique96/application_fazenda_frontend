@@ -27,7 +27,7 @@ npm install
 ```
 - Execute o comando abaixo, para fazer o build de arquivos de scripts e estilo.
 ```sh
-gulp
+npm run build
 ```
 - Rode o comando abaixo, para iniciar um servidor http local e acessa os arquivos.
 ```sh
